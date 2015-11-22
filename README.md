@@ -1,5 +1,16 @@
 # openshift-v3-installation-guide
-
+### Create AWS environment
+#### Create VPC
+#### Create Security Group
+```
+• 22    - ssh
+• 80    - Web Apps
+• 443   - Web Apps (https)
+• 4789  - SDN / VXLAN
+• 8443  - OpenShift Console
+• 10250 - kubelet
+```
+#### Create keypair
 
 ### Install dependencies
 ```
@@ -29,8 +40,8 @@ export ec2_node_instance_type='t2.medium'
 export ec2_etcd_instance_type='t2.medium'
 export ec2_image='ami-dc1c2b8e'
 export ec2_region='ap-southeast-1'
-export ec2_keypair='dir-fpt-openShift'
-export ec2_security_groups="['launch-wizard-4']"
+export ec2_keypair='keypair_name'
+export ec2_security_groups='security_group_name'
 export ec2_vpc_subnet='subnet-de1c64bb'
 export ec2_assign_public_ip='true'
 export os_etcd_root_vol_size='20'
