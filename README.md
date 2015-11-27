@@ -59,6 +59,32 @@ $ source env-var
 $ bin/cluster create aws <cluster-name>
 ```
 Note: If no deployment type is specified, then the default is origin
+### Configure OpenShift
+SSH into OpenShift master instance, change to ROOT account.
+#### Deploy a Registry
+```
+$ cd /etc/origin/master
+$ oadm registry --config=admin.kubeconfig \
+    --credentials=openshift-registry.kubeconfig
+# Check if the Registry up and running
+$ oc get pods
+$ oc get svc
+```
+#### Deploy a Router
+```
+$ oadm router <router_name> --replicas=<number> \
+    --credentials=openshift-router.kubeconfig \
+    --service-account=router
+```
+#### Setting the application domain
+```
+$ vi /etc/origin/master/master-config.yaml
+```
+Edit domain name in subdomain:
+```
+routingConfig:
+  subdomain: <your_domain>
+```
 
 ### Terminate OpenShift
 ```
