@@ -33,6 +33,8 @@ $ cd openshift-ansible
 ### export env var
 $ touch env-var
 ### save below texts into env-var file
+export AWS_ACCESS_KEY_ID=<your_access_key>
+export AWS_SECRET_ACCESS_KEY=<your_secret_key>
 export ec2_instance_type='t2.medium'
 export ec2_master_instance_type='t2.medium'
 export ec2_infra_instance_type='t2.medium'
