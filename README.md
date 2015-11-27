@@ -80,7 +80,7 @@ $ oadm router <router_name> --replicas=<number> \
 ```
 $ vi /etc/origin/master/master-config.yaml
 ```
-Edit domain name in subdomain:
+Edit domain name in `subdomain` parameter:
 ```
 routingConfig:
   subdomain: <your_domain>
