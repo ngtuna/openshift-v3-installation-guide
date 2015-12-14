@@ -86,6 +86,8 @@ Edit domain name in `subdomain` parameter:
 ```
 routingConfig:
   subdomain: <your_domain>
+---
+Note: remember to map domain to OS node that hosted router container.
 ```
 
 ### Terminate OpenShift
